@@ -1,0 +1,390 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"show",
+				"show_file"
+			],
+			[
+				"dir",
+				"directory"
+			],
+			[
+				"opt",
+				"options_menu"
+			],
+			[
+				"di",
+				"directory"
+			],
+			[
+				"ope",
+				"open_another"
+			],
+			[
+				"n",
+				"new_dir"
+			],
+			[
+				"new",
+				"new_dirname"
+			],
+			[
+				"in",
+				"infile"
+			],
+			[
+				"rest",
+				"restarting"
+			],
+			[
+				"Ch",
+				"chdir"
+			],
+			[
+				"sho",
+				"show_file"
+			],
+			[
+				"viw",
+				"view_file"
+			],
+			[
+				"vi",
+				"view_file"
+			],
+			[
+				"pat",
+				"path"
+			],
+			[
+				"get",
+				"get_variables"
+			],
+			[
+				"req",
+				"require"
+			],
+			[
+				"out",
+				"out_file"
+			],
+			[
+				"a1",
+				"a1frames"
+			],
+			[
+				"ou",
+				"out_path"
+			],
+			[
+				"fil",
+				"files"
+			],
+			[
+				"t",
+				"test_"
+			],
+			[
+				"to",
+				"to_s"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "single_frame_repeater.rb",
+			"settings":
+			{
+				"buffer_size": 3636,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "join_and_mosh.rb",
+			"settings":
+			{
+				"buffer_size": 3233,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "config.yml",
+			"settings":
+			{
+				"buffer_size": 111,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 132.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/9 of Spades/Dropbox/glitch/Ruby/aviglitching"
+	],
+	"file_history":
+	[
+		"/C/Users/9 of Spades/Dropbox/glitch/Ruby/view_video.rb",
+		"/C/Users/9 of Spades/Dropbox/glitch/Ruby/filechecker.rb",
+		"/C/Users/9 of Spades/Dropbox/glitch/Ruby/file_testing.rb",
+		"/C/Users/9 of Spades/Dropbox/glitch/Ruby/ls.rb",
+		"/C/Users/9 of Spades/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/9 of Spades/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/9 of Spades/Dropbox/glitch/Ruby/open_file_dialog.rb",
+		"/C/Users/9 of Spades/Documents/Ruby/thread01.rb",
+		"/C/Users/9 of Spades/Documents/Ruby/progress_01.rb"
+	],
+	"find":
+	{
+		"height": 24.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"out_file",
+			"@out_file",
+			"path",
+			"\\",
+			"\"\n"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"outfile",
+			"@outfile",
+			"@path",
+			"\\\\"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "single_frame_repeater.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3636,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "join_and_mosh.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3233,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "config.yml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 111,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 24.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 254.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "aviglitching.sublime-project",
+	"replace":
+	{
+		"height": 44.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 133.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
