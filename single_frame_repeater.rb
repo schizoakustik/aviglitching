@@ -1,6 +1,7 @@
 require 'yaml'
 require 'tk'
 require 'aviglitch'
+require_relative 'change_options'
 
 @config = YAML::load_file("config.yml")
 
@@ -130,22 +131,6 @@ def restarting(path)
 		else
 			menu
 		end
-	end
-end
-
-def change_options
-	puts "|* options menu: (c)hange working directory | back to (m)enu"
-	options_menu = gets.chomp
-	if options_menu == "c"
-		dir = Tk::chooseDirectory
-		puts dir
-		config = { :starting_dir => dir }
-		File.open("config.yml", "w") { |f| f.puts config.to_yaml }
-	elsif options_menu == "m"
-		menu
-	else
-		puts "|* i don't know what to do with that information"
-		change_options
 	end
 end
 
