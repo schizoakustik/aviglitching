@@ -2,26 +2,14 @@ require 'yaml'
 require 'tk'
 require 'aviglitch'
 require_relative 'change_options'
+require_relative 'menu'
 
 @config = YAML::load_file("config.yml")
 
 puts "|* avi_joiner && keyframe_remover"
+puts "|* current working directory: "
+  puts "|* [#{@config[:starting_dir]}]"
 
-def menu
-  puts "|* menu: (g)litch | (o)ptions | (q)uit"
-  menu = gets.chomp
-  if menu == "g"
-    open_files()
-  elsif menu == "o"
-    change_options()
-  elsif menu == "q"
-    exit
-  else
-    puts "|* that's not on the menu"
-    menu()
-  end
-    
-end
 def open_files
   Dir.chdir(@config[:starting_dir])
 	path1 = Tk::getOpenFile

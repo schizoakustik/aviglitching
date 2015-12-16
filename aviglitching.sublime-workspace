@@ -96,27 +96,27 @@
 	"buffers":
 	[
 		{
-			"file": "single_frame_repeater.rb",
-			"settings":
-			{
-				"buffer_size": 3636,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "join_and_mosh.rb",
 			"settings":
 			{
-				"buffer_size": 3233,
-				"line_ending": "Windows"
+				"buffer_size": 2926,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "single_frame_repeater.rb",
+			"settings":
+			{
+				"buffer_size": 3270,
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "config.yml",
 			"settings":
 			{
-				"buffer_size": 111,
-				"line_ending": "Windows"
+				"buffer_size": 85,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -152,7 +152,7 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/9 of Spades/Dropbox/glitch/Ruby/aviglitching"
+		"/home/linus/dev/ruby/aviglitching"
 	],
 	"file_history":
 	[
@@ -208,53 +208,24 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "single_frame_repeater.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3636,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "join_and_mosh.rb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3233,
+						"buffer_size": 2926,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								254,
+								254
 							]
 						],
 						"settings":
@@ -263,8 +234,37 @@
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.x": -0.0,
+						"translation.y": 816.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "single_frame_repeater.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3270,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								243,
+								243
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 816.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -276,7 +276,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 111,
+						"buffer_size": 85,
 						"regions":
 						{
 						},
@@ -295,7 +295,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
