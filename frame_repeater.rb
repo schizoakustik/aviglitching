@@ -1,44 +1,16 @@
-require 'yaml'
-require 'tk'
-require 'aviglitch'
-require_relative 'change_options'
-require_relative 'menu'
+puts "|* frame repeater"
 
-@config = YAML::load_file("config.yml")
-
-puts "|* single_frame_repeater"
-puts "|* current working directory: "
-puts "|* [#{@config[:starting_dir]}]"
-
-def open_file
-	Dir.chdir(@config[:starting_dir])
-  path = Tk::getOpenFile
-  # Check if subdirectory exists, eithr create it or just go there
-  new_dir = File.basename(path, ".avi")
-  if Dir.exist?(new_dir)
-    Dir.chdir(new_dir)
-  else
-    Dir.mkdir(new_dir)
-    Dir.chdir(new_dir)
-  end
-  get_variables(path)
-end
-
-def get_variables(path)
+def frame_repeater(path)
 	print "|* last buffer frame: "
-	last_buffer_frame = gets.to_i
+	l = gets.to_i
 	print "|* frame to repeat: "
-	frame_to_repeat = gets.to_i
+	f = gets.to_i
 	print "|* trailing frames: "
-	trailing_frames = gets.to_i
+	t = gets.to_i
 	print "|* x * "
-	repetitions = gets.to_i
+	r = gets.to_i
 	# New AviGlitch instance with frames from path
 	a = AviGlitch.open path
-	repeat_frames(a, last_buffer_frame, frame_to_repeat, trailing_frames, repetitions, path)
-end
-
-def repeat_frames(a, l, f, t, r, path)
 	#Glitching thread
 	t1 = Thread.new{
 		filename = File.basename(path, ".avi")
@@ -79,45 +51,9 @@ def repeat_frames(a, l, f, t, r, path)
 	    $stdout.flush
 	    sleep 1.2
 	  end
-	  show_file(path)
+	  show_file(path, "f")
 	  #restarting(path)
 	}	
 	t1.join
 	t2.join
 end
-
-# Ask to show video
-def show_file(path)
-	print "\n|* alright! view file? Y/n: "
-	view_file = gets.chomp
-	if view_file == "y" or view_file == ""
-		t3 = Thread.new{
-			`vlc --qt-minimal-view --quiet #{@outfile}`
-		}
-		t3.join
-		restarting(path)
-	else
-		restarting(path)
-	end
-end
-
-def restarting(path)
-	# Restarting options
-	print "\n|* go again with same file? Y/n: "
-	go_again = gets.chomp
-	if go_again == "y" or go_again == ""
-		get_variables(path)
-	else
-		print "|* so another file then? Y/n: "
-		open_another = gets.chomp
-		if open_another == "y" or open_another == ""
-			open_file
-		elsif open_another == "q"
-			exit			
-		else
-			menu
-		end
-	end
-end
-
-menu

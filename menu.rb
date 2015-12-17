@@ -1,8 +1,12 @@
-def menu  
-  puts "|* menu: (g)litch | (o)ptions | (q)uit"
+
+def menu
+  puts "|* avi glitching"
+  puts "|* menu: (f)rame repeater | (j)oin & mosh | (o)ptions | (q)uit"
   menu = gets.chomp
-  if menu == "g"
-    open_file
+  if menu == "f"
+    open_file("f")
+  elsif menu == "j"
+    open_file("j")
   elsif menu == "o"
     change_options
   elsif menu == "q"
