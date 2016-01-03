@@ -1,6 +1,9 @@
+
+# Join two videos together and remove the first keyframe from the second one to create a mosh effect.
+
 def join_and_mosh(paths)
- 	a1 = AviGlitch.open paths[0]								# New AviGlitch instance from 1st file
-	a2 = AviGlitch.open paths[1]								# New AviGlitch instance from 2nd file
+ 	a1 = AviGlitch.open paths[0]
+	a2 = AviGlitch.open paths[1]
   print "|* ok, 1st file. keep (a)ll frames/just the (1)st? "
   a1frames = gets.chomp
 	a = []

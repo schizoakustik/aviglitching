@@ -6,6 +6,8 @@ Dir.glob("lib/*.rb") { |file|
   require_relative file
   }
 
+# Open file and send it to which ever method was chosen from the menu.
+
 def open_file(mode)
   Dir.chdir(@config[:starting_dir])
     paths = []
@@ -47,9 +49,12 @@ def show_file(path, mode)
   end
 end
 
+# Different ways of restarting, depending on what mode was selected from the menu
+
 def restarting(path, mode)
   # Restarting options
-  if mode == "f"
+  case mode
+  when "f"
     print "\n|* go again with same file? Y/n: "
     go_again = gets.chomp
     if go_again == "y" or go_again == ""
@@ -65,7 +70,7 @@ def restarting(path, mode)
         menu
       end
     end
-  elsif mode == "j"
+  when "j"
     print "\n|* go again with other files? Y/n: "
     go_again = gets.chomp
     if go_again == "y" or go_again == ""
@@ -75,6 +80,9 @@ def restarting(path, mode)
     end
   end
 end
+
+# Check for configuration file and load it if it exists. Otherwise :starting_dir is current dir. Also ask user to set
+# a working directory and save it to the configuration file.
 
 if File.exists?("config.yml")
   @config = YAML::load_file("config.yml")

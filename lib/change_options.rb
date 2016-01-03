@@ -1,3 +1,5 @@
+# Change options - for now just the default working directory
+
 def change_wd
   dir = Tk::chooseDirectory
   config = { :starting_dir => dir }
@@ -10,9 +12,10 @@ end
 def change_options
   puts "|* options menu: (c)hange working directory | back to (m)enu"
   options_menu = gets.chomp
-  if options_menu == "c"
+  case options_menu
+  when "c"
     change_wd
-  elsif options_menu == "m"
+  when "m"
     menu
   else
     puts "|* i don't know what to do with that information"

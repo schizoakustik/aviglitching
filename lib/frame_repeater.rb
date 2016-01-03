@@ -1,3 +1,6 @@
+
+# Repeat a number of frames in a video.
+
 def frame_repeater(path)
 	print "|* last buffer frame: "
 	l = gets.to_i

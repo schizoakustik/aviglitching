@@ -1,4 +1,6 @@
 
+# Transcode a video file to .avi using streamio-ffmpeg
+
 def transcode(path)
   outfile = File.basename(path[0], '.*')
   m = FFMPEG::Movie.new(path[0])

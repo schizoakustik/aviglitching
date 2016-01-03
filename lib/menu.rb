@@ -1,3 +1,6 @@
+
+# Aviglitching menu
+
 def menu
   puts "|* this is menu"
   puts "|* menu: (f)rame repeater | (j)oin & mosh | (t)ranscode file to avi | (o)ptions | (q)uit"
