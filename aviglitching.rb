@@ -1,39 +1,52 @@
 require 'yaml'
 require 'tk'
 require 'aviglitch'
-require_relative 'change_options'
-require_relative 'menu'
-require_relative 'frame_repeater'
-require_relative 'join_and_mosh'
+require 'streamio-ffmpeg'
+# Fix load path
+$: << './lib/'
+require 'change_options'
+require 'menu'
+require 'frame_repeater'
+require 'join_and_mosh'
+require 'transcode'
 
 def open_file(mode)
   Dir.chdir(@config[:starting_dir])
-  if mode == "f"
+  case mode
+  when "f"
+    puts "|* frame repeater"
     path = Tk::getOpenFile
     # Check if subdirectory exists, either create it or just go there
     new_dir = File.basename(path, ".avi")
     if Dir.exist?(new_dir)
       Dir.chdir(new_dir)
+    elsif new_dir == ""
+      puts "ok, not sure why u changed yr mind but ok"
+      menu
     else
       Dir.mkdir(new_dir)
       Dir.chdir(new_dir)
     end
     frame_repeater(path)
-  elsif mode == "j"
+  when "j"
+    puts "|* avi_joiner && keyframe_remover"
     path1 = Tk::getOpenFile
     filename1 = File.basename(path1, ".avi")        # Get filename from path
     path2 = Tk::getOpenFile
     filename2 = File.basename(path2, ".avi")        # Get filename from path
     new_dir = "#{File.basename(path1, ".avi")}_mosh"
-    # Check if subdirectory exists, eithr create it or just go there
+    # Check if subdirectory exists, either create it or just go there
     if Dir.exist?(new_dir)
       Dir.chdir(new_dir)
     else
       Dir.mkdir(new_dir)
       Dir.chdir(new_dir)
     end
+    join_and_mosh(path1, path2, filename1, filename2)
+  when "t"
+    file = Tk::getOpenFile
+    transcode(file)
   end
-  join_and_mosh(path1, path2, filename1, filename2)
 end
 
 # Ask to show video
