@@ -2,7 +2,7 @@ require 'yaml'
 require 'tk'
 require 'aviglitch'
 require 'streamio-ffmpeg'
-files = Dir.glob("lib/*.rb") { |file| 
+Dir.glob("lib/*.rb") { |file| 
   require_relative file
   }
 
