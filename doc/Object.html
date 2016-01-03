@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Object - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">BasicObject
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-change_options">#change_options</a>
+    
+    <li ><a href="#method-i-change_wd">#change_wd</a>
+    
+    <li ><a href="#method-i-frame_repeater">#frame_repeater</a>
+    
+    <li ><a href="#method-i-join_and_mosh">#join_and_mosh</a>
+    
+    <li ><a href="#method-i-menu">#menu</a>
+    
+    <li ><a href="#method-i-open_file">#open_file</a>
+    
+    <li ><a href="#method-i-restarting">#restarting</a>
+    
+    <li ><a href="#method-i-show_file">#show_file</a>
+    
+    <li ><a href="#method-i-transcode">#transcode</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Object">
+  <h1 id="class-Object" class="class">
+    class Object
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-change_options" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">change_options</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="change_options-source">
+            <pre><span class="ruby-comment"># File lib/change_options.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">change_options</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;|* options menu: (c)hange working directory | back to (m)enu&quot;</span>
+  <span class="ruby-identifier">options_menu</span> = <span class="ruby-identifier">gets</span>.<span class="ruby-identifier">chomp</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">options_menu</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;c&quot;</span>
+    <span class="ruby-identifier">change_wd</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;m&quot;</span>
+    <span class="ruby-identifier">menu</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;|* i don&#39;t know what to do with that information&quot;</span>
+    <span class="ruby-identifier">change_options</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-change_wd" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">change_wd</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Change options - for now just the default working directory</p>
+          
+          
+
+          
+          <div class="method-source-code" id="change_wd-source">
+            <pre><span class="ruby-comment"># File lib/change_options.rb, line 3</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">change_wd</span>
+  <span class="ruby-identifier">dir</span> = <span class="ruby-constant">Tk</span><span class="ruby-operator">::</span><span class="ruby-identifier">chooseDirectory</span>
+  <span class="ruby-identifier">config</span> = { <span class="ruby-value">:starting_dir</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">dir</span> }
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">&quot;config.yml&quot;</span>, <span class="ruby-string">&quot;w&quot;</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">config</span>.<span class="ruby-identifier">to_yaml</span> }
+  <span class="ruby-ivar">@config</span> = <span class="ruby-constant">YAML</span><span class="ruby-operator">::</span><span class="ruby-identifier">load_file</span>(<span class="ruby-string">&quot;config.yml&quot;</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;new working directory is #{dir}&quot;</span>
+  <span class="ruby-identifier">menu</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-frame_repeater" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">frame_repeater</span><span
+            class="method-args">(path)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Repeat a number of frames in a video.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="frame_repeater-source">
+            <pre><span class="ruby-comment"># File lib/frame_repeater.rb, line 4</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">frame_repeater</span>(<span class="ruby-identifier">path</span>)
+        <span class="ruby-identifier">print</span> <span class="ruby-string">&quot;|* last buffer frame: &quot;</span>
+        <span class="ruby-identifier">l</span> = <span class="ruby-identifier">gets</span>.<span class="ruby-identifier">to_i</span>
+        <span class="ruby-identifier">print</span> <span class="ruby-string">&quot;|* frame to repeat: &quot;</span>
+        <span class="ruby-identifier">f</span> = <span class="ruby-identifier">gets</span>.<span class="ruby-identifier">to_i</span>
+        <span class="ruby-identifier">print</span> <span class="ruby-string">&quot;|* trailing frames: &quot;</span>
+        <span class="ruby-identifier">t</span> = <span class="ruby-identifier">gets</span>.<span class="ruby-identifier">to_i</span>
+        <span class="ruby-identifier">print</span> <span class="ruby-string">&quot;|* x * &quot;</span>
+        <span class="ruby-identifier">r</span> = <span class="ruby-identifier">gets</span>.<span class="ruby-identifier">to_i</span>
+        <span class="ruby-comment"># New AviGlitch instance with frames from path</span>
+        <span class="ruby-identifier">a</span> = <span class="ruby-constant">AviGlitch</span>.<span class="ruby-identifier">open</span> <span class="ruby-identifier">path</span>[<span class="ruby-value">0</span>]
+        <span class="ruby-comment">#Glitching thread</span>
+        <span class="ruby-identifier">t1</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">new</span>{
+                <span class="ruby-identifier">filename</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">path</span>[<span class="ruby-value">0</span>], <span class="ruby-string">&quot;.avi&quot;</span>)
+                <span class="ruby-comment"># Get last frame of a</span>
+                <span class="ruby-identifier">last_frame</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">frames</span>.<span class="ruby-identifier">size</span>
+                <span class="ruby-comment"># Save non-iframes to d</span>
+                <span class="ruby-identifier">d</span> = []
+                <span class="ruby-identifier">a</span>.<span class="ruby-identifier">frames</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span>, <span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+                        <span class="ruby-identifier">d</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">i</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">is_deltaframe?</span>
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-comment"># Keep first keyframe, start effect at last_buffer_frame</span>
+                <span class="ruby-identifier">q</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">frames</span>[<span class="ruby-value">0</span>, <span class="ruby-identifier">l</span>]
+                <span class="ruby-comment"># Add frame_to_repeat and any trailing_frames to x</span>
+                <span class="ruby-identifier">x</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">frames</span>[<span class="ruby-identifier">d</span>[<span class="ruby-identifier">f</span>], <span class="ruby-identifier">t</span>];
+                <span class="ruby-comment"># Repeat frame_to_repeat + any trailing_frames * times and add to the buffer</span>
+                <span class="ruby-comment"># Stop if the number of repetitions exceed total frame count</span>
+                <span class="ruby-identifier">q</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-identifier">x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">r</span>)
+        <span class="ruby-comment"># Add the rest of a to y and stick it to the end of q</span>
+                <span class="ruby-comment"># if last_frame - l &gt; r</span>
+                <span class="ruby-identifier">y</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">frames</span>[<span class="ruby-identifier">d</span>[<span class="ruby-identifier">l</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>], <span class="ruby-identifier">last_frame</span>]
+                <span class="ruby-identifier">q</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-identifier">y</span>)
+                <span class="ruby-comment"># New AviGlitch instance using the frames</span>
+                <span class="ruby-identifier">o</span> = <span class="ruby-constant">AviGlitch</span>.<span class="ruby-identifier">open</span> <span class="ruby-identifier">q</span>
+                <span class="ruby-ivar">@outfile</span> = <span class="ruby-node">&quot;#{filename}_0-#{l}_#{f}-#{t}_#{r}.avi&quot;</span>
+                <span class="ruby-identifier">o</span>.<span class="ruby-identifier">output</span> <span class="ruby-ivar">@outfile</span>
+        }
+        <span class="ruby-comment">#Progress thread</span>
+        <span class="ruby-identifier">t2</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">new</span>{
+                <span class="ruby-identifier">progress</span> = <span class="ruby-string">&#39;|* plz wait, repeating frames&#39;</span>
+                <span class="ruby-keyword">while</span> <span class="ruby-identifier">t1</span>.<span class="ruby-identifier">status</span>
+                        <span class="ruby-identifier">progress</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;.&quot;</span>
+            <span class="ruby-comment"># move the cursor to the beginning of the line with \r</span>
+            <span class="ruby-identifier">print</span> <span class="ruby-string">&quot;\r&quot;</span>
+            <span class="ruby-comment"># puts add \n to the end of string, use print instead</span>
+            <span class="ruby-identifier">print</span> <span class="ruby-identifier">progress</span> <span class="ruby-comment">#+ &quot; #{r / 100} %&quot;</span>
+            <span class="ruby-comment"># force the output to appear immediately when using print</span>
+            <span class="ruby-comment"># by default when \n is printed to the standard output, the buffer is flushed.</span>
+            <span class="ruby-identifier">$stdout</span>.<span class="ruby-identifier">flush</span>
+            <span class="ruby-identifier">sleep</span> <span class="ruby-value">1.2</span>
+          <span class="ruby-keyword">end</span>
+          <span class="ruby-identifier">show_file</span>(<span class="ruby-identifier">path</span>, <span class="ruby-string">&quot;f&quot;</span>)
+          <span class="ruby-comment">#restarting(path)</span>
+        }      
+        <span class="ruby-identifier">t1</span>.<span class="ruby-identifier">join</span>
+        <span class="ruby-identifier">t2</span>.<span class="ruby-identifier">join</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-join_and_mosh" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">join_and_mosh</span><span
+            class="method-args">(paths)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Join two videos together and remove the first keyframe from the second one
+to create a mosh effect.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="join_and_mosh-source">
+            <pre><span class="ruby-comment"># File lib/join_and_mosh.rb, line 4</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">join_and_mosh</span>(<span class="ruby-identifier">paths</span>)
+        <span class="ruby-identifier">a1</span> = <span class="ruby-constant">AviGlitch</span>.<span class="ruby-identifier">open</span> <span class="ruby-identifier">paths</span>[<span class="ruby-value">0</span>]
+        <span class="ruby-identifier">a2</span> = <span class="ruby-constant">AviGlitch</span>.<span class="ruby-identifier">open</span> <span class="ruby-identifier">paths</span>[<span class="ruby-value">1</span>]
+  <span class="ruby-identifier">print</span> <span class="ruby-string">&quot;|* ok, 1st file. keep (a)ll frames/just the (1)st? &quot;</span>
+  <span class="ruby-identifier">a1frames</span> = <span class="ruby-identifier">gets</span>.<span class="ruby-identifier">chomp</span>
+        <span class="ruby-identifier">a</span> = []
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">a1frames</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;a&quot;</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">a1frames</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-identifier">a</span> = <span class="ruby-identifier">a1</span>.<span class="ruby-identifier">frames</span>
+    <span class="ruby-identifier">a1frames</span> = <span class="ruby-string">&quot;all_frames&quot;</span>
+   <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">a1frames</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;1&quot;</span>
+    <span class="ruby-identifier">a</span> = <span class="ruby-identifier">a1</span>.<span class="ruby-identifier">frames</span>[<span class="ruby-value">0</span>, <span class="ruby-value">1</span>]
+    <span class="ruby-identifier">a1frames</span> = <span class="ruby-string">&quot;1st_frame&quot;</span>
+  <span class="ruby-keyword">end</span>
+   <span class="ruby-comment">#Glitching thread</span>
+  <span class="ruby-identifier">t1</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">new</span>{
+    <span class="ruby-identifier">a</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-identifier">a2</span>.<span class="ruby-identifier">frames</span>)
+        <span class="ruby-identifier">p</span> = <span class="ruby-constant">AviGlitch</span>.<span class="ruby-identifier">open</span> <span class="ruby-identifier">a</span>
+        <span class="ruby-identifier">q</span> = []
+    <span class="ruby-comment"># Keep first keyframe</span>
+        <span class="ruby-identifier">q</span> = <span class="ruby-identifier">p</span>.<span class="ruby-identifier">frames</span>[<span class="ruby-value">0</span>, <span class="ruby-value">1</span>]
+    <span class="ruby-comment"># To hell with the rest</span>
+        <span class="ruby-identifier">p</span>.<span class="ruby-identifier">remove_all_keyframes!</span>
+    <span class="ruby-comment"># Tack the rest of the (all now non-key)frames to the end of q</span>
+        <span class="ruby-identifier">q</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-identifier">p</span>.<span class="ruby-identifier">frames</span>)
+        <span class="ruby-identifier">o</span> = <span class="ruby-constant">AviGlitch</span>.<span class="ruby-identifier">open</span> <span class="ruby-identifier">q</span>
+        <span class="ruby-comment"># Check to see if file exists, increment filename</span>
+        <span class="ruby-identifier">outpath</span> = <span class="ruby-node">&quot;#{File.basename(paths[0], &#39;.*&#39;)}_[#{a1frames}]_#{File.basename(paths[1], &#39;.*&#39;)}_mosh_&quot;</span>
+        <span class="ruby-identifier">files</span> = <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">glob</span>(<span class="ruby-node">&quot;#{outpath}*.avi&quot;</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">files</span>.<span class="ruby-identifier">any?</span>
+        <span class="ruby-ivar">@outfile</span> = <span class="ruby-identifier">files</span>.<span class="ruby-identifier">last</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-ivar">@outfile</span> = <span class="ruby-node">&quot;#{outpath}01.avi&quot;</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-ivar">@outfile</span>)
+        <span class="ruby-identifier">b</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-ivar">@outfile</span>, <span class="ruby-string">&quot;.avi&quot;</span>)
+          <span class="ruby-identifier">b</span> = <span class="ruby-identifier">b</span>.<span class="ruby-identifier">next!</span>
+          <span class="ruby-ivar">@outfile</span> = <span class="ruby-node">&quot;#{b}.avi&quot;</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">o</span>.<span class="ruby-identifier">output</span> <span class="ruby-ivar">@outfile</span>
+  }
+  <span class="ruby-comment">#Progress thread</span>
+  <span class="ruby-identifier">t2</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">new</span>{
+    <span class="ruby-identifier">progress</span> = <span class="ruby-string">&#39;|* plz wait, joining &amp; moshing&#39;</span>
+    <span class="ruby-keyword">while</span> <span class="ruby-identifier">t1</span>.<span class="ruby-identifier">status</span>
+      <span class="ruby-identifier">progress</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;.&quot;</span>
+      <span class="ruby-identifier">print</span> <span class="ruby-string">&quot;\r&quot;</span>
+      <span class="ruby-identifier">print</span> <span class="ruby-identifier">progress</span>
+      <span class="ruby-identifier">$stdout</span>.<span class="ruby-identifier">flush</span>
+      <span class="ruby-identifier">sleep</span> <span class="ruby-value">1.2</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">show_file</span>(<span class="ruby-identifier">paths</span>, <span class="ruby-string">&quot;j&quot;</span>)
+  } 
+  <span class="ruby-identifier">t1</span>.<span class="ruby-identifier">join</span>
+  <span class="ruby-identifier">t2</span>.<span class="ruby-identifier">join</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-menu" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">menu</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Aviglitching menu</p>
+          
+          
+
+          
+          <div class="method-source-code" id="menu-source">
+            <pre><span class="ruby-comment"># File lib/menu.rb, line 4</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">menu</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;|* this is menu&quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;|* menu: (f)rame repeater | (j)oin &amp; mosh | (t)ranscode file to avi | (o)ptions | (q)uit&quot;</span>
+  <span class="ruby-identifier">menu</span> = <span class="ruby-identifier">gets</span>.<span class="ruby-identifier">chomp</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">menu</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;f&quot;</span>
+    <span class="ruby-identifier">open_file</span>(<span class="ruby-string">&quot;f&quot;</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;j&quot;</span>
+    <span class="ruby-identifier">open_file</span>(<span class="ruby-string">&quot;j&quot;</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;t&quot;</span>
+    <span class="ruby-identifier">open_file</span>(<span class="ruby-string">&quot;t&quot;</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;o&quot;</span>
+    <span class="ruby-identifier">change_options</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;q&quot;</span>
+    <span class="ruby-identifier">exit</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;|* that&#39;s not on the menu&quot;</span>
+    <span class="ruby-identifier">menu</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-open_file" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">open_file</span><span
+            class="method-args">(mode)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Open file and send it to which ever method was chosen from the menu.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="open_file-source">
+            <pre><span class="ruby-comment"># File aviglitching.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">open_file</span>(<span class="ruby-identifier">mode</span>)
+  <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-ivar">@config</span>[<span class="ruby-value">:starting_dir</span>])
+    <span class="ruby-identifier">paths</span> = []
+    <span class="ruby-identifier">paths</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Tk</span><span class="ruby-operator">::</span><span class="ruby-identifier">getOpenFile</span>
+    <span class="ruby-comment"># Check if subdirectory exists, either create it or just go there</span>
+    <span class="ruby-identifier">new_dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">paths</span>[<span class="ruby-value">0</span>], <span class="ruby-string">&quot;.*&quot;</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">new_dir</span>)
+      <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">new_dir</span>)
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">new_dir</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;&quot;</span>
+      <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;not sure why u changed yr mind but ok&quot;</span>
+      <span class="ruby-identifier">menu</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">mkdir</span>(<span class="ruby-identifier">new_dir</span>)
+      <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">new_dir</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">mode</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;f&quot;</span>
+    <span class="ruby-identifier">frame_repeater</span>(<span class="ruby-identifier">paths</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;j&quot;</span>
+    <span class="ruby-identifier">paths</span>.<span class="ruby-identifier">push</span>(<span class="ruby-constant">Tk</span><span class="ruby-operator">::</span><span class="ruby-identifier">getOpenFile</span>)
+    <span class="ruby-identifier">join_and_mosh</span>(<span class="ruby-identifier">paths</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;t&quot;</span>
+    <span class="ruby-identifier">transcode</span>(<span class="ruby-identifier">paths</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-restarting" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">restarting</span><span
+            class="method-args">(path, mode)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Different ways of restarting, depending on what mode was selected from the
+menu</p>
+          
+          
+
+          
+          <div class="method-source-code" id="restarting-source">
+            <pre><span class="ruby-comment"># File aviglitching.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">restarting</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">mode</span>)
+  <span class="ruby-comment"># Restarting options</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">mode</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;f&quot;</span>
+    <span class="ruby-identifier">print</span> <span class="ruby-string">&quot;\n|* go again with same file? Y/n: &quot;</span>
+    <span class="ruby-identifier">go_again</span> = <span class="ruby-identifier">gets</span>.<span class="ruby-identifier">chomp</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">go_again</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;y&quot;</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">go_again</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;&quot;</span>
+      <span class="ruby-identifier">frame_repeater</span>(<span class="ruby-identifier">path</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">print</span> <span class="ruby-string">&quot;|* so another file then? Y/n: &quot;</span>
+      <span class="ruby-identifier">open_another</span> = <span class="ruby-identifier">gets</span>.<span class="ruby-identifier">chomp</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">open_another</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;y&quot;</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">open_another</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;&quot;</span>
+        <span class="ruby-identifier">open_file</span>(<span class="ruby-identifier">mode</span>)
+      <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">open_another</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;q&quot;</span>
+        <span class="ruby-identifier">exit</span>      
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">menu</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;j&quot;</span>
+    <span class="ruby-identifier">print</span> <span class="ruby-string">&quot;\n|* go again with other files? Y/n: &quot;</span>
+    <span class="ruby-identifier">go_again</span> = <span class="ruby-identifier">gets</span>.<span class="ruby-identifier">chomp</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">go_again</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;y&quot;</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">go_again</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;&quot;</span>
+      <span class="ruby-identifier">open_file</span>(<span class="ruby-identifier">mode</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">menu</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-show_file" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">show_file</span><span
+            class="method-args">(path, mode)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Ask to show video</p>
+          
+          
+
+          
+          <div class="method-source-code" id="show_file-source">
+            <pre><span class="ruby-comment"># File aviglitching.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">show_file</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">mode</span>)
+  <span class="ruby-identifier">print</span> <span class="ruby-string">&quot;\n|* alright! view file? Y/n: &quot;</span>
+  <span class="ruby-identifier">view_file</span> = <span class="ruby-identifier">gets</span>.<span class="ruby-identifier">chomp</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">view_file</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;y&quot;</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">view_file</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-identifier">t3</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">new</span>{
+      <span class="ruby-node">%x`vlc --qt-minimal-view --quiet #{@outfile}`</span>
+    }
+    <span class="ruby-identifier">t3</span>.<span class="ruby-identifier">join</span>
+    <span class="ruby-identifier">restarting</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">mode</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">restarting</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">mode</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-transcode" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">transcode</span><span
+            class="method-args">(path)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Transcode a video file to .avi using streamio-ffmpeg</p>
+          
+          
+
+          
+          <div class="method-source-code" id="transcode-source">
+            <pre><span class="ruby-comment"># File lib/transcode.rb, line 4</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">transcode</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-identifier">outfile</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">path</span>[<span class="ruby-value">0</span>], <span class="ruby-string">&#39;.*&#39;</span>)
+  <span class="ruby-identifier">m</span> = <span class="ruby-constant">FFMPEG</span><span class="ruby-operator">::</span><span class="ruby-constant">Movie</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">path</span>[<span class="ruby-value">0</span>])
+  <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">outfile</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;.avi&#39;</span>)
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">transcode</span>(<span class="ruby-identifier">outfile</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;.avi&#39;</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">progress</span><span class="ruby-operator">|</span> <span class="ruby-identifier">puts</span> <span class="ruby-identifier">progress</span>}
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{outfile}.avi saved.&quot;</span>
+    <span class="ruby-identifier">menu</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">&#39;file already has existence.&#39;</span>
+    <span class="ruby-identifier">menu</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
