@@ -2,18 +2,14 @@ require 'yaml'
 require 'tk'
 require 'aviglitch'
 require 'streamio-ffmpeg'
-# Fix load path
-$: << './lib/'
-require 'change_options'
-require 'menu'
-require 'frame_repeater'
-require 'join_and_mosh'
-require 'transcode'
+files = Dir.glob("lib/*.rb") { |file| 
+  require_relative file
+  }
 
 def open_file(mode)
   Dir.chdir(@config[:starting_dir])
     paths = []
-    paths.push(Tk::getOpenFile)
+    paths << Tk::getOpenFile
     # Check if subdirectory exists, either create it or just go there
     new_dir = File.basename(paths[0], ".*")
     if Dir.exist?(new_dir)
