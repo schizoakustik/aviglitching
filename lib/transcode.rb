@@ -1,8 +1,13 @@
 
-def transcode(file)
-  outfile = File.basename(file, '.*')
-  m = FFMPEG::Movie.new(file)
-  m.transcode(outfile + '.avi')
-  puts "#{outfile}.avi saved."
-  menu
+def transcode(path)
+  outfile = File.basename(path[0], '.*')
+  m = FFMPEG::Movie.new(path[0])
+  unless File.exist?(outfile + '.avi')
+    m.transcode(outfile + '.avi') {|progress| puts progress}
+    puts "#{outfile}.avi saved."
+    menu
+  else
+    puts 'file already has existence.'
+    menu
+  end
 end

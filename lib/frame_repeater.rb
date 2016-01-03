@@ -8,10 +8,10 @@ def frame_repeater(path)
 	print "|* x * "
 	r = gets.to_i
 	# New AviGlitch instance with frames from path
-	a = AviGlitch.open path
+	a = AviGlitch.open path[0]
 	#Glitching thread
 	t1 = Thread.new{
-		filename = File.basename(path, ".avi")
+		filename = File.basename(path[0], ".avi")
 		# Get last frame of a
 		last_frame = a.frames.size
 		# Save non-iframes to d

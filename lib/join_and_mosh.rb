@@ -1,6 +1,6 @@
-def join_and_mosh(path1, path2, filename1, filename2)
- 	a1 = AviGlitch.open path1								# New AviGlitch instance from 1st file
-	a2 = AviGlitch.open path2								# New AviGlitch instance from 2nd file
+def join_and_mosh(paths)
+ 	a1 = AviGlitch.open paths[0]								# New AviGlitch instance from 1st file
+	a2 = AviGlitch.open paths[1]								# New AviGlitch instance from 2nd file
   print "|* ok, 1st file. keep (a)ll frames/just the (1)st? "
   a1frames = gets.chomp
 	a = []
@@ -24,12 +24,12 @@ def join_and_mosh(path1, path2, filename1, filename2)
   	q.concat(p.frames)
   	o = AviGlitch.open q
   	# Check to see if file exists, increment filename
-  	out_path = "#{filename1}_[#{a1frames}]_#{filename2}_mosh_"
-  	files = Dir.glob("#{out_path}*.avi")
+  	outpath = "#{File.basename(paths[0], '.*')}_[#{a1frames}]_#{File.basename(paths[1], '.*')}_mosh_"
+  	files = Dir.glob("#{outpath}*.avi")
   	if files.any?
       	@outfile = files.last
       else
-      	@outfile = "#{out_path}01.avi"
+      	@outfile = "#{outpath}01.avi"
     end
     if File.exists?(@outfile)
      	b = File.basename(@outfile, ".avi")
@@ -48,7 +48,7 @@ def join_and_mosh(path1, path2, filename1, filename2)
       $stdout.flush
       sleep 1.2
     end
-    show_file(path1, "j")
+    show_file(paths, "j")
   } 
   t1.join
   t2.join

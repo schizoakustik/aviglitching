@@ -12,40 +12,27 @@ require 'transcode'
 
 def open_file(mode)
   Dir.chdir(@config[:starting_dir])
-  case mode
-  when "f"
-    puts "|* frame repeater"
-    path = Tk::getOpenFile
+    paths = []
+    paths.push(Tk::getOpenFile)
     # Check if subdirectory exists, either create it or just go there
-    new_dir = File.basename(path, ".avi")
+    new_dir = File.basename(paths[0], ".*")
     if Dir.exist?(new_dir)
       Dir.chdir(new_dir)
     elsif new_dir == ""
-      puts "ok, not sure why u changed yr mind but ok"
+      puts "not sure why u changed yr mind but ok"
       menu
     else
       Dir.mkdir(new_dir)
       Dir.chdir(new_dir)
     end
-    frame_repeater(path)
+  case mode
+  when "f"
+    frame_repeater(paths)
   when "j"
-    puts "|* avi_joiner && keyframe_remover"
-    path1 = Tk::getOpenFile
-    filename1 = File.basename(path1, ".avi")        # Get filename from path
-    path2 = Tk::getOpenFile
-    filename2 = File.basename(path2, ".avi")        # Get filename from path
-    new_dir = "#{File.basename(path1, ".avi")}_mosh"
-    # Check if subdirectory exists, either create it or just go there
-    if Dir.exist?(new_dir)
-      Dir.chdir(new_dir)
-    else
-      Dir.mkdir(new_dir)
-      Dir.chdir(new_dir)
-    end
-    join_and_mosh(path1, path2, filename1, filename2)
+    paths.push(Tk::getOpenFile)
+    join_and_mosh(paths)
   when "t"
-    file = Tk::getOpenFile
-    transcode(file)
+    transcode(paths)
   end
 end
 
