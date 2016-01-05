@@ -1,10 +1,10 @@
 module Glitching
   
-  class Transcode
+  class NonAvi < FFMPEG::Movie
     include FFMPEG
     attr_accessor :path
 
-    def initialize(params)
+    def initialize params
       @path = params[:path]
     end
 
@@ -21,11 +21,16 @@ module Glitching
 
   end
 
-  class FrameRepeater < AviGlitch::Base
-    require_relative 'glitch_tools'
-    include GlitchTools
-    #include AviGlitch
-    attr_accessor :path, :last_buffer_frame, :frame_to_repeat, :trailing_frames, :repetitions
+  class Avi < AviGlitch::Base
+    def list_keyframes
+      frame_types = []
+      self.frames.each { |frame| frame_types << frame.is_iframe? }
+      frame_types.each_with_index { |i, n| puts "#{n} is_iframe" if i }
+    end
+  end
+
+#  class FrameRepeater < AviGlitch::Base
+#    attr_accessor :path, :last_buffer_frame, :frame_to_repeat, :trailing_frames, :repetitions
 
     def repeat_frames params
       @path = params[:path]
@@ -53,5 +58,5 @@ module Glitching
       o = AviGlitch.open(q)
       o.output "#{filename}_#{@last_buffer_frame}_((#{@frame_to_repeat}-#{@trailing_frames})x#{@repetitions}).avi"
     end
-  end
+#  end
 end
