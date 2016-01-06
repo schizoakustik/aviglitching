@@ -21,16 +21,8 @@ module Glitching
 
   end
 
-  class Avi < AviGlitch::Base
-    def list_keyframes
-      frame_types = []
-      self.frames.each { |frame| frame_types << frame.is_iframe? }
-      frame_types.each_with_index { |i, n| puts "#{n} is_iframe" if i }
-    end
-  end
-
-#  class FrameRepeater < AviGlitch::Base
-#    attr_accessor :path, :last_buffer_frame, :frame_to_repeat, :trailing_frames, :repetitions
+  class FrameRepeater < AviGlitch::Base
+    attr_accessor :path, :last_buffer_frame, :frame_to_repeat, :trailing_frames, :repetitions
 
     def repeat_frames params
       @path = params[:path]
@@ -46,7 +38,7 @@ module Glitching
       d = []
       self.frames.each_with_index { |f, i| d.push(i) if f.is_deltaframe? }
       # Keep frames up until last_buffer_frame
-      q = self.frames[0, @last_buffer_frame]
+      q = self.frames[0, @last_buffer_frame]            # TODO a similar construct as below i.e. self.frames[0, @lbf].to_avi.frames.concat ... ?
       # Add frame_to_repeat and any trailing_frames to x
       x = self.frames[d[@frame_to_repeat], @trailing_frames]
       # Repeat frames repetitions times and add to q
@@ -56,7 +48,36 @@ module Glitching
       q.concat(y)
       # New AviGlitch instance with the glitched file
       o = AviGlitch.open(q)
-      o.output "#{filename}_#{@last_buffer_frame}_((#{@frame_to_repeat}-#{@trailing_frames})x#{@repetitions}).avi"
+      # Return glitched instance to the program
+      return o
+      #o.output "#{filename}_#{@last_buffer_frame}_((#{@frame_to_repeat}-#{@trailing_frames})x#{@repetitions}).avi"
     end
-#  end
+  end
+
+  class JoinerAndMosher < AviGlitch::Base
+    attr_accessor :path, :other_path, :all_frames
+
+    def join_and_mosh params
+      @path = params[:path]
+      @other_path = AviGlitch.open(params[:other_path])
+      @frames_to_keep = params[:frames_to_keep]
+      @all_frames = params[:all_frames]
+      
+      unless all_frames 
+        o = AviGlitch.open(self.frames[0, @frames_to_keep].to_avi.frames.concat(@other_path.frames.to_avi.remove_all_keyframes!.frames))
+      else
+        o = AviGlitch.open(self.frames.concat(@other_path.frames.to_avi.remove_all_keyframes!.frames))
+      end
+        return o
+        #o.output "#{@path}_#{params[:other_path]}_mosh.avi"
+    end
+
+  end
+
+    def list_keyframes
+      frame_types = []
+      self.frames.each { |frame| frame_types << frame.is_iframe? }
+      frame_types.each_with_index { |i, n| puts "#{n} is_iframe" if i }
+    end
+
 end
